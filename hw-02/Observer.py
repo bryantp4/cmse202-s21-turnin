@@ -19,13 +19,14 @@ class Observer():
         self.im2_filename = im2_filename
         self.load_images(im1_filename,im2_filename)
         
-    def load_images():
+    def load_images(self,im1_filename,im2_filename):
         '''
         This function is incomplete! It is missing the appropriate input vales
         and the "pass" should be replaced with the appropriate code.
         Update this docstring to explain what the function does (or should do).
         '''
-        pass
+        im1 = fits.open(self.im1_filename)
+        im2 = fits.open(self.im2_filename)
     
     def make_composite(self):
         '''
@@ -41,3 +42,6 @@ class Observer():
         # Compute the red channel values and then clip them to ensure nothing is > 1.0
         rgb[:,:,0] = 1.5 * (self.im2_data.astype("float")/norm_factor)
         rgb[:,:,0][rgb[:,:,0] > 1.0] = 1.0
+        
+    def calc_stats():
+        pass
